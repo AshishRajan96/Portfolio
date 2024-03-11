@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            project
+        </title>
+    </head>
+    <body>
+        <style>
+            /*  Projects  */
+.projects .title::after {
+  content: "What I did ?";
+}
+
+.projects .carousel .card {
+  background: purple;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.projects .carousel .card:hover {
+  background:rosybrown;
+}
+
+.projects .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.projects .carousel .card:hover .box {
+  transform: scale(1.05);
+}
+
+.projects .carousel .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+
+.projects .carousel .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #888c8d;
+  transition: all 0.3s ease;
+}
+
+.projects .carousel .card:hover img {
+  border-color: #fff;
+}
+
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none !important;
+  border-radius: 50%;
+  border: 2px solid #888c8d !important;
+  transition: all 0.3s ease;
+}
+
+.owl-dot.active {
+  width: 35px;
+  border-radius: 14px;
+}
+
+.owl-dot.active,
+.owl-dot:hover {
+  background: #679ee1 !important;
+}
+
+        </style>
+        <script>
+            
+    (document).ready(function () {
+  (window).scroll(function () {
+    //  sticky navbar on scroll script  //
+    if (this.scrollY > 20) {
+      (".navbar").addClass("sticky");
+    } else {
+      (".navbar").removeClass("sticky");
+    }
+
+    //  scroll-up button show/hide script  //
+    if (this.scrollY > 500) {
+      (".scroll-up-btn").addClass("show");
+    } else {
+      (".scroll-up-btn").removeClass("show");
+    }
+  });
+
+  //  slide-up script  //
+
+  (".scroll-up-btn").click(function () {
+    ("html").animate({ scrollTop: 0 });
+    //  removing smooth scroll on slide-up button click  //
+    ("html").css("scrollBehavior", "auto");
+  });
+
+  (".navbar .menu li a").click(function () {
+    //  Smooth scroll on Menu Items click  //
+
+    ("html").css("scrollBehavior", "smooth");
+  });
+   //  Toggle Navbar  //
+
+   (".menu-btn").click(function () {
+    (".navbar .menu").toggleClass("active");
+    (".menu-btn i").toggleClass("active");
+  });
+
+  //  Typing Text Animation  //
+
+  var typed = new Typed(".typing", {
+    strings: [
+      "Fullstack Developer",
+      "Software Developer",
+      "Python Developer",
+      "Founder",
+      "Author"
+    ],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+  });
+
+  var typed = new Typed(".typing-2", {
+    strings: [
+      "Fullstack Developer",
+      "Software Developer",
+      "Python Developer",
+      "Founder",
+      "Author"
+    ],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+  });
+
+  //  Owl Carousel  //
+
+  (".carousel").owlCarousel({
+    margin: 20,
+    loop: true,
+    autoplay: true,
+    autoplayTimeOut: 2000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      600: {
+        items: 2,
+        nav: false
+      },
+      1000: {
+        items: 3,
+        nav: false
+      }
+    }
+  });
+});
+
+</script>
+
+        </script>
+        <!-- Projects -->
+        <section class="projects" id="projects">
+            <div class="max-width">
+              <h2 class="title">My Projects</h2>
+              <div class="carousel owl-carousel">
+                <div class="card">
+                  <div class="box">
+                    <img src="https://source.unsplash.com/720x600/?shopping" alt="">
+                    <div class="text">Tourism Management System</div>
+                    <p>Travel management system is used to book a tour from anywhere in the world by a single dynamic website which will help the user to know all about the places and tour details in a single website.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="box">
+                    <img src="https://source.unsplash.com/720x600/?portfolio" alt="">
+                    <div class="text">Restaurant Management System</div>
+                    <p>Restaurant management system that enables a single outlet or enterprise to better serve its customers 
+                      and aid employees with food and beverage transaction and controls.
+                      </p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="box">
+                    <img src="https://source.unsplash.com/720x600/?blog" alt="">
+                    <div class="text">Hospital Management System</div>
+                    <p>It is an organized computerized system designed and programmed to deal with day-to-day operations
+                      and management of hospital activities. It also maintains hospital information such as doctors in charge
+                      and department administrating 
+                      </p>
+                  </div>
+                </div>
+                
+                
+                
+                </div>
+              </div>
+            </div>
+          </section>
+    </body>
+</html>
